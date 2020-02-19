@@ -7,7 +7,7 @@ export default class Fecha {
     constructor(dia, mes, año) {
         this.fecha = new Date(año, mes -1, dia);
         this.mesesAño = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-        this.diasSemana = ["Lunes", "Martes", "Miercoles", "Jueves","Viernes", "Sabado", "Domingo"]
+        this.diasSemana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
     }
     getAños() {
         let restaAños = new Date(Date.now() - this.fecha);
