@@ -16,7 +16,6 @@ class Main {
         console.log(`Han pasado ${fecha.getMeses()} meses`);
         console.log(`Han pasado ${fecha.getSemanas()} semanas`);
         console.log(`Han pasado ${fecha.getDias()} días`);
-
     }
     probarTiempo() {
         console.log(`<---------Tiempo--------->`);
@@ -25,8 +24,8 @@ class Main {
         console.log(`La hora en el formato AM/PM es: ${tiempo.getFormato12()}`);
     }
     probarNombre() {
-        console(`<---------Nombres--------->`)
-        let nombre = new Nombre("Jesus", "Godinez", "Martinez");
+        console.log(`<---------Nombres--------->`)
+        let nombre = new Nombre("Jesus Ivan", "Godinez", "Martinez");
         console.log(`Nombre completo: ${nombre.getNombreCompleto()}`);
         console.log(`Nombre completo por apellidos: ${nombre.getApellidoNombre()}`);
         console.log(`Iniciales: ${nombre.getIniciales()}`);

@@ -16,6 +16,6 @@ export default class Nombre {
         return `${this.apePat} ${this.apeMat} ${this.nombres}`
     }
     getIniciales() {
-        return `${this.nombres.charAt(0)} ${this.apePat.charAt(0)} ${this.apeMat.charAt(0)}`
+        return `${this.nombres.charAt(0)}${this.apePat.charAt(0)}${this.apeMat.charAt(0)}`
     }
 }
