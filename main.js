@@ -1,6 +1,7 @@
 import Fecha from "./fecha.js"
 import Tiempo from "./tiempo.js";
 import Nombre from "./nombre.js";
+import Paciente from "./Paciente.js";
 
 class Main {
     probarFecha() {
@@ -30,9 +31,15 @@ class Main {
         console.log(`Nombre completo por apellidos: ${nombre.getApellidoNombre()}`);
         console.log(`Iniciales: ${nombre.getIniciales()}`);
     }
+    probarPaciente() {
+        console.log(`<---------Pacientes--------->`)
+        let paciente = new Paciente("Juan Perez", "21/02/2020", "3121205971");
+        console.log(`${paciente.getPerfil()}`);
+    }
 }
 
 let app = new Main
 app.probarFecha();
 app.probarTiempo();
 app.probarNombre();
+app.probarPaciente();
