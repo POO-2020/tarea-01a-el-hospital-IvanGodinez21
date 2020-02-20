@@ -33,7 +33,8 @@ class Main {
     }
     probarPaciente() {
         console.log(`<---------Pacientes--------->`)
-        let paciente = new Paciente("Juan Perez", "21/02/2020", "3121205971");
+        let fecha = new Fecha(19, 2 , 2000);
+        let paciente = new Paciente("Juan Perez", fecha.getFecha(), "3121205971");
         console.log(`${paciente.getPerfil()}`);
     }
 }
