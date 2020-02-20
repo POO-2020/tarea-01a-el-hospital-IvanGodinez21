@@ -19,6 +19,7 @@ export default class Tiempo {
             hora = hora + 12
             return `${hora}:${minutos}`
         }
+        return `${hora}:${minutos}`
     }
     getFormato12() {
         let hora = this.hora
