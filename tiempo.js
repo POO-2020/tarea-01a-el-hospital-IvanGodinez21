@@ -3,7 +3,7 @@ export default class Tiempo {
      * 
      * @param {number} hora 
      * @param {number} minutos 
-     * @param {number} periodos 
+     * @param {string} periodos 
      */
     constructor(hora, minutos, periodos) {
         this.hora = hora;
