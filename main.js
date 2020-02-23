@@ -3,6 +3,7 @@ import Tiempo from "./tiempo.js";
 import Nombre from "./nombre.js";
 import Paciente from "./paciente.js";
 import Doctor from "./doctor.js";
+import Cita from "./cita.js";
 
 class Main {
     probarFecha() {
@@ -39,14 +40,24 @@ class Main {
     probarPaciente() {
         console.log(`<---------Pacientes--------->`)
         let fecha = new Fecha(19, 2 , 2000);
-        let paciente = new Paciente("Juan Perez", fecha.getFecha(), 3121206971);
+        let nombre = new Nombre("Juan", "Perez", "Ortega")
+        let paciente = new Paciente(nombre.getNombreCompleto(), fecha.getFecha(), 3121206971);
         console.log(`${paciente.getPerfil()}`);
     }
     probarDoctor() {
         console.log(`<---------Doctor--------->`)
-        var nombre = new Nombre("Manuel", "Ramirez", "Ortega")
+        let nombre = new Nombre("Manuel", "Ramirez", "Ortega")
         let doctor = new Doctor(3124305, "Traumatologo", nombre.getNombreCompleto(), 3121205571)
         console.log(`${doctor.getPerfildoc()}`)
+    }
+    probarCita() {
+        console.log(`<---------Cita--------->`)
+        let fecha = new Fecha(23, 2, 2020)
+        let hora = new Tiempo(10, 30, "am")
+        let doctor = new Nombre("Manuel", "Ramirez", "Ortega")
+        let paciente = new Nombre("Juan", "Perez", "Ortega")
+        let cita = new Cita(fecha.getFecha(), hora.getFormato24(), doctor.getNombreCompleto(), paciente.getNombreCompleto(), 3121205571)
+        console.log(`${cita.getCita()}`)
     }
 }
 
@@ -56,3 +67,4 @@ app.probarTiempo();
 app.probarNombre();
 app.probarPaciente();
 app.probarDoctor();
+app.probarCita();
