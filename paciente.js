@@ -2,7 +2,7 @@ export default class Paciente {
     /**
      * @param {string} nombre
      * @param {number} fecha
-     * @param {string} numero
+     * @param {number} numero
      */
      constructor(nombre, fecha, numero) {
          this.nombre = nombre

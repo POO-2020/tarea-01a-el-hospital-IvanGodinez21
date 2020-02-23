@@ -1,7 +1,8 @@
 import Fecha from "./fecha.js"
 import Tiempo from "./tiempo.js";
 import Nombre from "./nombre.js";
-import Paciente from "./Paciente.js";
+import Paciente from "./paciente.js";
+import Doctor from "./doctor.js";
 
 class Main {
     probarFecha() {
@@ -30,12 +31,22 @@ class Main {
         console.log(`Nombre completo: ${nombre.getNombreCompleto()}`);
         console.log(`Nombre completo por apellidos: ${nombre.getApellidoNombre()}`);
         console.log(`Iniciales: ${nombre.getIniciales()}`);
+        var nombre1 = new Nombre("Juan", "Perez", "Ortega");
+        console.log(`Nombre completo: ${nombre1.getNombreCompleto()}`);
+        console.log(`Nombre completo por apellidos: ${nombre1.getApellidoNombre()}`);
+        console.log(`Iniciales: ${nombre1.getIniciales()}`);
     }
     probarPaciente() {
         console.log(`<---------Pacientes--------->`)
         let fecha = new Fecha(19, 2 , 2000);
-        let paciente = new Paciente("Juan Perez", fecha.getFecha(), "3121205971");
+        let paciente = new Paciente("Juan Perez", fecha.getFecha(), 3121206971);
         console.log(`${paciente.getPerfil()}`);
+    }
+    probarDoctor() {
+        console.log(`<---------Doctor--------->`)
+        var nombre = new Nombre("Manuel", "Ramirez", "Ortega")
+        let doctor = new Doctor(3124305, "Traumatologo", nombre.getNombreCompleto(), 3121205571)
+        console.log(`${doctor.getPerfildoc()}`)
     }
 }
 
@@ -44,3 +55,4 @@ app.probarFecha();
 app.probarTiempo();
 app.probarNombre();
 app.probarPaciente();
+app.probarDoctor();

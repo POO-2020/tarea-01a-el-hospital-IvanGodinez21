@@ -6,9 +6,9 @@ export default class Tiempo {
      * @param {string} periodos 
      */
     constructor(hora, minutos, periodos) {
-        this.hora = hora;
-        this.minutos = minutos;
-        this.periodos = periodos.toLowerCase();
+        this.hora = hora
+        this.minutos = minutos
+        this.periodos = periodos.toLowerCase()
     }
 
     getFormato24() {
