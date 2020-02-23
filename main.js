@@ -4,6 +4,7 @@ import Nombre from "./nombre.js";
 import Paciente from "./paciente.js";
 import Doctor from "./doctor.js";
 import Cita from "./cita.js";
+import Hospital from "./hospital.js";
 
 class Main {
     probarFecha() {
@@ -46,18 +47,25 @@ class Main {
     }
     probarDoctor() {
         console.log(`<---------Doctor--------->`)
-        let nombre = new Nombre("Manuel", "Ramirez", "Ortega")
-        let doctor = new Doctor(3124305, "Traumatologo", nombre.getNombreCompleto(), 3121205571)
+        let doctor = new Doctor(3124305, "Traumatologo", new Nombre("Manuel", "Ramirez", "Ortega").getNombreCompleto(), 3121205571);
         console.log(`${doctor.getPerfildoc()}`)
     }
     probarCita() {
         console.log(`<---------Cita--------->`)
-        let fecha = new Fecha(23, 2, 2020)
-        let hora = new Tiempo(10, 30, "am")
-        let doctor = new Nombre("Manuel", "Ramirez", "Ortega")
-        let paciente = new Nombre("Juan", "Perez", "Ortega")
-        let cita = new Cita(fecha.getFecha(), hora.getFormato24(), doctor.getNombreCompleto(), paciente.getNombreCompleto(), 3121205571)
+        let cita = new Cita(new Fecha(23, 2, 2020).getFecha(), new Tiempo(10, 30, "am").getFormato24(), new Nombre("Manuel", "Ramirez", "Ortega").getNombreCompleto(), new Nombre("Juan", "Perez", "Ortega").getNombreCompleto(), 3121205571)
         console.log(`${cita.getCita()}`)
+    }
+    probarHospital() {
+        console.log(`<---------Hospital--------->`)
+        let doctor1 = new Doctor(3124305, "Traumatologo", new Nombre("Raul", "Gonzalez", "Hernandez").getNombreCompleto(), 3121205571);
+        let doctor2 = new Doctor(3124306, "Traumatologo", new Nombre("Enrique", "Ramirez", "Torres").getNombreCompleto(), 3121205572);
+        let cita1 = new Cita(new Fecha(21, 12, 2000), new Tiempo(10,30, "am").getFormato24(),new Doctor(3124307, "Cirujano", new Nombre("Alberto", "Roamon", "Ramirez").getNombreCompleto(), 3121205971));
+
+        this.hospital.registrarDoctor(doctor1);
+        this.hospital.registrarDoctor(doctor2);
+        this.hospital.listarDoctores();
+        this.hospital.registrarCita(cita1);
+        this.hospital.listarCitas();
     }
 }
 
@@ -68,3 +76,4 @@ app.probarNombre();
 app.probarPaciente();
 app.probarDoctor();
 app.probarCita();
+app.probarHospital();
