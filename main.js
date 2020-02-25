@@ -42,30 +42,48 @@ class Main {
         console.log(`<---------Pacientes--------->`)
         let fecha = new Fecha(19, 2 , 2000);
         let nombre = new Nombre("Juan", "Perez", "Ortega")
-        let paciente = new Paciente(nombre.getNombreCompleto(), fecha.getFecha(), 3121206971);
+        let paciente = new Paciente(nombre, fecha, 3121206971);
         console.log(`${paciente.getPerfil()}`);
     }
     probarDoctor() {
         console.log(`<---------Doctor--------->`)
-        let doctor = new Doctor(3124305, "Traumatologo", new Nombre("Manuel", "Ramirez", "Ortega").getNombreCompleto(), 3121205571);
+        let doctor = new Doctor(3124305, "Traumatologo", new Nombre("Manuel", "Ramirez", "Ortega"), 3121205571);
         console.log(`${doctor.getPerfildoc()}`)
     }
     probarCita() {
         console.log(`<---------Cita--------->`)
-        let cita = new Cita(new Fecha(23, 2, 2020).getFecha(), new Tiempo(10, 30, "am").getFormato24(), new Nombre("Manuel", "Ramirez", "Ortega").getNombreCompleto(), new Nombre("Juan", "Perez", "Ortega").getNombreCompleto(), 3121205571)
+        let cita = new Cita(
+            new Fecha(23, 2, 2020), 
+            new Tiempo(10, 30, "am"), 
+            new Doctor (3123123, "Pediatra", new Nombre("Manuel", "Ramirez", "Ortega"), 31212059347),
+            new Paciente (new Nombre("Juan", "Perez", "Ortega"), new Fecha(21, 12, 2000), 3121205571)
+        );
         console.log(`${cita.getCita()}`)
     }
     probarHospital() {
         console.log(`<---------Hospital--------->`)
-        let doctor1 = new Doctor(3124305, "Traumatologo", new Nombre("Raul", "Gonzalez", "Hernandez").getNombreCompleto(), 3121205571);
-        let doctor2 = new Doctor(3124306, "Traumatologo", new Nombre("Enrique", "Ramirez", "Torres").getNombreCompleto(), 3121205572);
-        let cita1 = new Cita(new Fecha(21, 12, 2000), new Tiempo(10,30, "am").getFormato24(),new Doctor(3124307, "Cirujano", new Nombre("Alberto", "Roamon", "Ramirez").getNombreCompleto(), 3121205971));
+        let hospital = new Hospital("Puerta de cobre", "Bosques 1120")
+        let doctor1 = new Doctor(3124305, "Traumatologo", new Nombre("Raul", "Gonzalez", "Hernandez"), 3121205571);
+        let doctor2 = new Doctor(3124306, "Traumatologo", new Nombre("Enrique", "Ramirez", "Torres"), 3121205572);
+        let cita1 = new Cita(
+            new Fecha(21, 12, 2000), 
+            new Tiempo(10,30, "am"), 
+            new Doctor(3124307, "Cirujano", new Nombre("Alberto", "Roamon", "Ramirez"), 3121205971), 
+            new Paciente(new Nombre ("Luis", "Eduardo", "Leyva"), new Fecha(21, 12, 2000), 3121205978)
+        );
+        let cita2 = new Cita(
+            new Fecha(21, 12, 2000), 
+            new Tiempo(10,30, "am"), 
+            new Doctor(3124307, "Traumatologo", new Nombre("Jose", "Roamon", "Godínez"), 3121205971), 
+            new Paciente(new Nombre ("Luis", "Eduardo", "Leyva"), new Fecha(21, 12, 2000), 3121205978)
+        );
 
-        this.hospital.registrarDoctor(doctor1);
-        this.hospital.registrarDoctor(doctor2);
-        this.hospital.listarDoctores();
-        this.hospital.registrarCita(cita1);
-        this.hospital.listarCitas();
+        hospital.registrarDoctor(doctor1);
+        hospital.registrarDoctor(doctor2);
+        hospital.listarDoctores();
+        hospital.registrarCita(cita1);
+        hospital.registrarCita(cita2);
+        hospital.listarCitas();
     }
 }
 

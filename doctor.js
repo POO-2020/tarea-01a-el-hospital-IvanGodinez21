@@ -12,6 +12,6 @@ export default class Doctor {
         this.telefono = telefono
     }
     getPerfildoc() {
-        return `Doctor: ${this.nombre}\nCedula: ${this.cedula}\nEspecialidad: ${this.especialidad}\nTeléfono: ${this.telefono}`
+        return `Doctor: ${this.nombre.getNombreCompleto()}\nCedula: ${this.cedula}\nEspecialidad: ${this.especialidad}\nTeléfono: ${this.telefono}`
     }
 }

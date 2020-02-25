@@ -13,6 +13,6 @@ export default class Cita {
         this.paciente = paciente
     }
     getCita() {
-        return `Cita No. # ${Math.trunc((Math.random() * (100 - 0) + 0))}\nFecha: ${this.fecha}\nHora: ${this.hora}\nDoctor: ${this.doctor}\nPaciente ${this.paciente}`
+        return `Cita No. #${Math.trunc((Math.random() * (100 - 0) + 0))}\nFecha: ${this.fecha.getFecha()}\nHora: ${this.hora.getFormato24()}\nDoctor: ${this.doctor.nombre.getNombreCompleto()}\nPaciente: ${this.paciente.nombre.getNombreCompleto()}`
     }
 }

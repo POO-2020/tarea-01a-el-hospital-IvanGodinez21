@@ -10,6 +10,6 @@ export default class Paciente {
          this.numero = numero
      }
      getPerfil() {
-        return `${this.nombre}\nFecha de registro: ${this.fecha}\nNúmero de Teléfono: ${this.numero}`
+        return `${this.nombre.getNombreCompleto()}\nFecha de registro: ${this.fecha.getFecha()}\nNúmero de Teléfono: ${this.numero}`
      }
 }
