@@ -1,6 +1,5 @@
 export default class Tiempo {
     /**
-     * 
      * @param {number} hora 
      * @param {number} minutos 
      * @param {string} periodos 

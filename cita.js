@@ -1,6 +1,5 @@
 export default class Cita {
     /**
-     * 
      * @param {string} fecha 
      * @param {string} hora 
      * @param {string} doctor 
