@@ -8,7 +8,6 @@ export default class Hospital {
         this.nombre = nombre
         this.direccion = direccion
         this.listadocs = new Array()
-        this.cita = cita
         this.listacita = new Array()
     }
     registrarDoctor(doctor) {
